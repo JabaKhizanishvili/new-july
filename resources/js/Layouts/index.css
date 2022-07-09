@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper {
+  width: 1124px;
+  margin: auto;
+  height: 100%;
+}
+.currencyTab::after {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 28px;
+  top: 2px;
+  border-radius: 30px;
+  background-color: rgb(109, 40, 217);
+  z-index: -1;
+  transition: 0.3s;
+}
+.currencyTab.tab_1::after {
+  left: 2px;
+}
+.currencyTab.tab_2::after {
+  left: 63px;
+}
+.currencyTab.tab_3::after {
+  left: 125px;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    width: 95%;
+  }
+}
