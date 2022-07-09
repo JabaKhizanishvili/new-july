@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link, usePage } from '@inertiajs/inertia-react'
+
 // import bg from "/assets/images/bg/2.png";
 // import img from "/assets/images/other/5.png";
 

@@ -21,7 +21,7 @@ const Navbar = () => {
                 }`}
         >
             <div className="wrapper flex items-center justify-between">
-                <Link to="/">LOGO</Link>
+                <Link href={route("client.home.index")}>LOGO</Link>
                 <div
                     className="flex items-center text-md fixed w-screen h-screen bg-slate-800 flex-col top-0 left-0 justify-center md:relative md:bg-transparent md:flex-row md:left-auto md:top-auto md:w-auto md:h-auto md:!transform-none transition duration-500 text-white md:text-inherit"
                     style={{
@@ -65,7 +65,7 @@ const Navbar = () => {
                             Log in
                         </Link>
                         <Link
-                            to="/signup"
+                            href={route("client.register")}
                             className={`p-2 rounded border font-bold whitespace-nowrap ${transparent ? "border-white " : "border-violet-700"
                                 }`}
                         >

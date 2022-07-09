@@ -85,11 +85,11 @@ Route::prefix('{locale?}')
                 Route::resource('customer', \App\Http\Controllers\Admin\CustomerController::class);
                 Route::get('customer/{customer}/destroy', [\App\Http\Controllers\Admin\CustomerController::class, 'destroy'])->name('customer.destroy');
                 Route::get('customer/doc/{doc}/destroy', [\App\Http\Controllers\Admin\CustomerController::class, 'docDelete'])->name('customer.delete-doc');
-                Route::get('customer/subclass/{customer}/create',[\App\Http\Controllers\Admin\CustomerController::class,'createSubClass'])->name('subclass.create');
-                Route::post('customer/subclass/{customer}/store',[\App\Http\Controllers\Admin\CustomerController::class,'storeSubClass'])->name('subclass.store');
-                Route::get('customer/subclass/{customer}/{subclass}/edit',[\App\Http\Controllers\Admin\CustomerController::class,'editSubClass'])->name('subclass.edit');
-                Route::put('customer/subclass/{customer}/{subclass}/edit',[\App\Http\Controllers\Admin\CustomerController::class,'updateSubClass'])->name('subclass.update');
-                Route::get('customer/subclass/{customer}/{subclass}/destroy',[\App\Http\Controllers\Admin\CustomerController::class,'destroySubClass'])->name('subclass.destroy');
+                Route::get('customer/subclass/{customer}/create', [\App\Http\Controllers\Admin\CustomerController::class, 'createSubClass'])->name('subclass.create');
+                Route::post('customer/subclass/{customer}/store', [\App\Http\Controllers\Admin\CustomerController::class, 'storeSubClass'])->name('subclass.store');
+                Route::get('customer/subclass/{customer}/{subclass}/edit', [\App\Http\Controllers\Admin\CustomerController::class, 'editSubClass'])->name('subclass.edit');
+                Route::put('customer/subclass/{customer}/{subclass}/edit', [\App\Http\Controllers\Admin\CustomerController::class, 'updateSubClass'])->name('subclass.update');
+                Route::get('customer/subclass/{customer}/{subclass}/destroy', [\App\Http\Controllers\Admin\CustomerController::class, 'destroySubClass'])->name('subclass.destroy');
                 Route::get('customer/subclass/{customer}/{subclass}/{doc}/destroy', [\App\Http\Controllers\Admin\CustomerController::class, 'subclassDocDelete'])->name('subclass.delete-doc');
 
                 Route::resource('vacancy', \App\Http\Controllers\Admin\VacancyController::class);
@@ -156,6 +156,8 @@ Route::prefix('{locale?}')
             Route::get('/login', [LoginPageController::class, 'Login'])->name('client.login');
 
             Route::post('/login', [LoginPageController::class, 'auth'])->name('client.auth');
+
+            Route::get('/register', [LoginPageController::class, 'Register'])->name('client.register');
 
             Route::middleware('customer:customer')->group(function () {
                 Route::get('/cabinet', [\App\Http\Controllers\Client\CabinetController::class, 'index'])->name('client.cabinet');
