@@ -4073,7 +4073,7 @@ var Navbar = function Navbar() {
   var pathname = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.pathname;
   var transparent = false;
 
-  if (pathname === "/") {
+  if (pathname === route("client.home.index")) {
     transparent = true;
   }
 
@@ -4091,7 +4091,7 @@ var Navbar = function Navbar() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "md:mr-20 "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/",
+    href: route("client.home.index"),
     className: "mx-5 font-bold block md:inline-block text-center mb-5 md:mb-0"
   }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "#",

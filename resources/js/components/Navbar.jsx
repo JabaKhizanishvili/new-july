@@ -12,7 +12,7 @@ const Navbar = () => {
     };
     const { pathname } = usePage().props;
     let transparent = false;
-    if (pathname === "/") {
+    if (pathname === route("client.home.index")) {
         transparent = true;
     }
     return (
@@ -30,7 +30,7 @@ const Navbar = () => {
                 >
                     <div className="md:mr-20 ">
                         <Link
-                            to="/"
+                            href={route("client.home.index")}
                             className="mx-5 font-bold block md:inline-block text-center mb-5 md:mb-0"
                         >
                             Home
