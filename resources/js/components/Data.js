@@ -1,3 +1,4 @@
+import React from 'react';
 // partners
 // import partner1 from "/assets/images/partners/1.png";
 // import partner2 from "/assets/images/partners/2.png";
@@ -7,9 +8,9 @@
 // import partner6 from "/assets/images/partners/6.png";
 
 // svg
-// import { ReactComponent as Svg1 } from "/assets/svg/1.svg";
-// import { ReactComponent as Svg2 } from "/assets/svg/2.svg";
-// import { ReactComponent as Svg3 } from "/assets/svg/3.svg";
+import Svg1 from "/assets/svg/1.svg";
+import Svg2 from "/assets/svg/2.svg";
+import Svg3 from "/assets/svg/3.svg";
 
 // resources
 // import '/assets/images/resources/1.png' from "/assets/images/resources/1.png";
@@ -29,18 +30,18 @@ export const partners = [
 
 export const levels = [
     {
-        icon: '/assets/svg/1.svg',
+        icon: <img style={{ width: "73px", }} className="group-hover:fill-white transition ease-in-out" src={Svg1} />,
         title: "Novice",
         paragraph: "You want to start trading but don't know hot to do it",
     },
     {
-        icon: '/assets/svg/1.svg',
+        icon: <img style={{ width: "73px", }} className="group-hover:fill-white transition ease-in-out" src={Svg2} />,
         title: "Beginner",
         paragraph:
             "The volume of redundant information has overwhelmed you when you tried in the past",
     },
     {
-        icon: '/assets/svg/1.svg',
+        icon: <img style={{ width: "73px", }} className="group-hover:fill-white transition ease-in-out" src={Svg3} />,
         title: "With some skills",
         paragraph:
             "Although you've been trading for some time, you can't seem to get your profits to exceed your looses",

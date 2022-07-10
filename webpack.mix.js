@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').js('resources/js/admin.js','public/js')
+mix.js('resources/js/app.js', 'public/js').js('resources/js/admin.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ])
@@ -22,7 +22,7 @@ mix.js('resources/js/app.js', 'public/js').js('resources/js/admin.js','public/js
     .postCss('resources/css/AppEng.css', 'public/css', [
         //
     ])
-// .browserSync("inertia.test")
+    // .browserSync("inertia.test")
     .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {

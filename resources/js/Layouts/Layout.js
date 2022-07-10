@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import "./index.css";
-
+// import "./index.css";
 import "aos/dist/aos.css";
-import Header from "../components/Navbar";
-
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 import setSeoData from "./SetSeoData";
 // import {Fragment} from "react";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -34,7 +31,7 @@ export default function Layout({ children, seo = null }) {
         <>
             {/*<Router>*/}
             {/*<Fragment>*/}
-            <Header />
+            <Navbar />
             {children}
             <Footer />
             {/*</Fragment>*/}
