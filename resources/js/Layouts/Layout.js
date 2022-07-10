@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import "./App.css";
-// import "./index.css";
+// import "./App.css";
+import "./index.css";
 import "aos/dist/aos.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";

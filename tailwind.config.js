@@ -2,10 +2,10 @@
 module.exports = {
     // content: ["./resources/**/*.{html,js}"],
     content: [
-        "./resources/**/*.{html,js}",
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
-        "./resources/js/Layouts/*.js",
+        "./resources/**/*.jsx",
+        "./resources/**/*.vue",
     ],
 
     theme: {
