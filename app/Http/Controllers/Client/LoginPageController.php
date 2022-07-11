@@ -111,6 +111,18 @@ class LoginPageController extends Controller
             'password' => 'required'
         ]);
 
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            // return redirect()->intended('dashboard');
+            return redirect(route("client.cabinet"));
+        }
+
         // if (!Auth::guard('customer')->attempt([
         //     'email' => $request->email,
         //     'password' => $request->password,
