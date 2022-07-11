@@ -153,11 +153,15 @@ Route::prefix('{locale?}')
 
 
             // cabinet
+            Route::get('/cabinet', [LoginPageController::class, 'Cabinet'])->name('client.cabinet');
+
+
             Route::get('/login', [LoginPageController::class, 'Login'])->name('client.login');
 
             Route::post('/login', [LoginPageController::class, 'auth'])->name('client.auth');
 
             Route::get('/register', [LoginPageController::class, 'Register'])->name('client.register');
+            Route::post('/registeruser', [App\Http\Controllers\Auth\AuthFrontendCostumController::class, 'register'])->name('register');
 
             Route::middleware('customer:customer')->group(function () {
                 Route::get('/cabinet', [\App\Http\Controllers\Client\CabinetController::class, 'index'])->name('client.cabinet');

@@ -2,12 +2,27 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { Link, usePage } from '@inertiajs/inertia-react'
 import Layout from "../Layouts/Layout";
+import Swal from 'sweetalert2'
+import { Route } from "react-router-dom";
 
 
 // import bg from "/assets/images/bg/2.png";
 // import img from "/assets/images/other/4.png";
 
-const SignIn = (page, seo) => {
+const SignIn = ({ page, seo, success }) => {
+
+    if (success) {
+        Swal.fire({
+            title: 'success',
+            text: 'თქვენ წარმატებით გაიარეთ რეგისტრაცია',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        })
+        setTimeout(() => {
+            location.reload()
+        }, 2000);
+    }
+
     return (
         <Layout seo={seo}>
             <div className="min-h-screen" style={{ backgroundImage: `url('/assets/images/bg/2.png')` }}>
@@ -39,7 +54,7 @@ const SignIn = (page, seo) => {
                         </button>
                         <div className="font-bold mt-5">
                             don't have an account yet?{" "}
-                            <Link to="/signup" className="underline">
+                            <Link href={route("client.register")} className="underline">
                                 {" "}
                                 sign up
                             </Link>
