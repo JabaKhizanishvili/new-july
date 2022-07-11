@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import { Link, usePage } from '@inertiajs/inertia-react'
+import { Link, usePage, useForm } from '@inertiajs/inertia-react'
 import Layout from "../Layouts/Layout";
 import Swal from 'sweetalert2'
 import { Route } from "react-router-dom";
@@ -11,36 +11,52 @@ import { Route } from "react-router-dom";
 
 const SignIn = ({ page, seo, success }) => {
 
-    if (success) {
-        Swal.fire({
-            title: 'success',
-            text: 'თქვენ წარმატებით გაიარეთ რეგისტრაცია',
-            icon: 'success',
-            confirmButtonText: 'Cool'
-        })
-        setTimeout(() => {
-            location.reload()
-        }, 2000);
+    const { data, setData, post, processing, errors } = useForm({
+
+        email: '',
+        password: '',
+
+    })
+
+    function submit(e) {
+        // alert('asdas')
+        e.preventDefault()
+        post(route("client.auth"))
     }
+
+
+    // if (success) {
+    //     Swal.fire({
+    //         title: 'success',
+    //         text: 'თქვენ წარმატებით გაიარეთ რეგისტრაცია',
+    //         icon: 'success',
+    //         confirmButtonText: 'Cool'
+    //     })
+    //     setTimeout(() => {
+    //         location.reload()
+    //     }, 2000);
+    // }
 
     return (
         <Layout seo={seo}>
             <div className="min-h-screen" style={{ backgroundImage: `url('/assets/images/bg/2.png')` }}>
                 <div className="wrapper md:pt-40 pt-20 text-center">
                     <img src={'/assets/images/other/4.png'} alt="" className="m-auto mb-5" />
-                    <form className="max-w-xs m-auto">
+                    <form className="max-w-xs m-auto" onSubmit={submit}>
                         <div className="text-2xl mb-6 text-violet-700 font-semibold ">
                             Sign in
                         </div>
                         <input
+                            value={data.email} onChange={e => setData('email', e.target.value)}
                             type="text"
                             className="bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3"
-                            placeholder="Enter Name"
+                            placeholder="Enter Email"
                         />
                         <input
+                            value={data.password} onChange={e => setData('first_name', e.target.value)}
                             type="password"
                             className="bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3"
-                            placeholder="Enter Email"
+                            placeholder="Enter Password"
                         />
                         <div className="flex mb-5">
                             <input type="checkbox" name="" id="checkbox" />

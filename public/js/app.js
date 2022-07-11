@@ -3469,17 +3469,32 @@ var SignIn = function SignIn(_ref) {
       seo = _ref.seo,
       success = _ref.success;
 
-  if (success) {
-    sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-      title: 'success',
-      text: 'თქვენ წარმატებით გაიარეთ რეგისტრაცია',
-      icon: 'success',
-      confirmButtonText: 'Cool'
-    });
-    setTimeout(function () {
-      location.reload();
-    }, 2000);
-  }
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    email: '',
+    password: ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post,
+      processing = _useForm.processing,
+      errors = _useForm.errors;
+
+  function submit(e) {
+    // alert('asdas')
+    e.preventDefault();
+    post(route("client.auth"));
+  } // if (success) {
+  //     Swal.fire({
+  //         title: 'success',
+  //         text: 'თქვენ წარმატებით გაიარეთ რეგისტრაცია',
+  //         icon: 'success',
+  //         confirmButtonText: 'Cool'
+  //     })
+  //     setTimeout(() => {
+  //         location.reload()
+  //     }, 2000);
+  // }
+
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     seo: seo
@@ -3495,17 +3510,26 @@ var SignIn = function SignIn(_ref) {
     alt: "",
     className: "m-auto mb-5"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
-    className: "max-w-xs m-auto"
+    className: "max-w-xs m-auto",
+    onSubmit: submit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-2xl mb-6 text-violet-700 font-semibold "
   }, "Sign in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    value: data.email,
+    onChange: function onChange(e) {
+      return setData('email', e.target.value);
+    },
     type: "text",
     className: "bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3",
-    placeholder: "Enter Name"
+    placeholder: "Enter Email"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    value: data.password,
+    onChange: function onChange(e) {
+      return setData('first_name', e.target.value);
+    },
     type: "password",
     className: "bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3",
-    placeholder: "Enter Email"
+    placeholder: "Enter Password"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex mb-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {

@@ -158,7 +158,7 @@ Route::prefix('{locale?}')
 
             Route::get('/login', [LoginPageController::class, 'Login'])->name('client.login');
 
-            Route::post('/login', [LoginPageController::class, 'auth'])->name('client.auth');
+            Route::post('/loginuser', [LoginPageController::class, 'auth'])->name('client.auth');
 
             Route::get('/register', [LoginPageController::class, 'Register'])->name('client.register');
             Route::post('/registeruser', [App\Http\Controllers\Auth\AuthFrontendCostumController::class, 'register'])->name('register');
