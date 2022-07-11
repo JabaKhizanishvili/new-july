@@ -47,12 +47,14 @@ const SignIn = ({ page, seo, success }) => {
                             Sign in
                         </div>
                         <input
+                            name="email"
                             value={data.email} onChange={e => setData('email', e.target.value)}
                             type="text"
                             className="bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3"
                             placeholder="Enter Email"
                         />
                         <input
+                            name="password"
                             value={data.password} onChange={e => setData('password', e.target.value)}
                             type="password"
                             className="bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3"

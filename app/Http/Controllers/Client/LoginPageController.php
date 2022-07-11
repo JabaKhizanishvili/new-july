@@ -104,19 +104,20 @@ class LoginPageController extends Controller
 
     public function auth(Request $request)
     {
+        // dd($request->post());
 
         $request->validate([
             'email' => ['required', 'email'],
             'password' => 'required'
         ]);
 
-        if (!Auth::guard('customer')->attempt([
-            'email' => $request->email,
-            'password' => $request->password,
-        ], $request->remember)) {
-            //return back()->with('danger','Email or Password is incorrect!');
-            return redirect()->back()->with('danger', 'wrong login and / or password');
-        }
+        // if (!Auth::guard('customer')->attempt([
+        //     'email' => $request->email,
+        //     'password' => $request->password,
+        // ], $request->remember)) {
+        //return back()->with('danger','Email or Password is incorrect!');
+        return redirect()->back()->with('danger', 'wrong login and / or password');
+        // }
         $request->session()->regenerate();
         //dd('ok');
         return redirect(locale_route('client.cabinet'));

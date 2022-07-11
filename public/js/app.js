@@ -3515,6 +3515,7 @@ var SignIn = function SignIn(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-2xl mb-6 text-violet-700 font-semibold "
   }, "Sign in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    name: "email",
     value: data.email,
     onChange: function onChange(e) {
       return setData('email', e.target.value);
@@ -3523,6 +3524,7 @@ var SignIn = function SignIn(_ref) {
     className: "bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3",
     placeholder: "Enter Email"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    name: "password",
     value: data.password,
     onChange: function onChange(e) {
       return setData('password', e.target.value);
