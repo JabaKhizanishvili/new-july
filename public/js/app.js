@@ -3525,7 +3525,7 @@ var SignIn = function SignIn(_ref) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     value: data.password,
     onChange: function onChange(e) {
-      return setData('first_name', e.target.value);
+      return setData('password', e.target.value);
     },
     type: "password",
     className: "bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3",
@@ -3575,14 +3575,6 @@ __webpack_require__.r(__webpack_exports__);
 // import img from "/assets/images/other/5.png";
 
 var SignUp = function SignUp(page, seo) {
-  // const [values, setValues] = useState({
-  //     first_name: null,
-  //     last_name: null,
-  //     phone: null,
-  //     email: null,
-  //     password: null,
-  //     repeat_password: null,
-  // })
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.useForm)({
     first_name: '',
     last_name: '',
@@ -3595,22 +3587,9 @@ var SignUp = function SignUp(page, seo) {
       setData = _useForm.setData,
       post = _useForm.post,
       processing = _useForm.processing,
-      errors = _useForm.errors; // function handleChange(e) {
-  //     const key = e.target.id;
-  //     const value = e.target.value
-  //     setValues(values => ({
-  //         ...values,
-  //         [key]: value,
-  //     }))
-  // }
-  // function handleSubmit(e) {
-  //     e.preventDefault()
-  //     Inertia.post('/test', values)
-  // }
-
+      errors = _useForm.errors;
 
   function submit(e) {
-    // alert('asdas')
     e.preventDefault();
     post(route("register"));
   }
@@ -3636,6 +3615,7 @@ var SignUp = function SignUp(page, seo) {
     onChange: function onChange(e) {
       return setData('first_name', e.target.value);
     } // value={values.first_name} onChange={handleChange}
+    // {errors.first_name && <div>{errors.first_name}</div>}
     ,
     type: "text",
     className: "bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3",

@@ -7,16 +7,6 @@ import Layout from "../Layouts/Layout";
 // import img from "/assets/images/other/5.png";
 
 const SignUp = (page, seo) => {
-
-    // const [values, setValues] = useState({
-    //     first_name: null,
-    //     last_name: null,
-    //     phone: null,
-    //     email: null,
-    //     password: null,
-    //     repeat_password: null,
-    // })
-
     const { data, setData, post, processing, errors } = useForm({
         first_name: '',
         last_name: '',
@@ -26,21 +16,7 @@ const SignUp = (page, seo) => {
         repeat_password: '',
     })
 
-    // function handleChange(e) {
-    //     const key = e.target.id;
-    //     const value = e.target.value
-    //     setValues(values => ({
-    //         ...values,
-    //         [key]: value,
-    //     }))
-    // }
-
-    // function handleSubmit(e) {
-    //     e.preventDefault()
-    //     Inertia.post('/test', values)
-    // }
     function submit(e) {
-        // alert('asdas')
         e.preventDefault()
         post(route("register"))
     }
@@ -58,6 +34,7 @@ const SignUp = (page, seo) => {
                             <input
                                 value={data.first_name} onChange={e => setData('first_name', e.target.value)}
                                 // value={values.first_name} onChange={handleChange}
+                                // {errors.first_name && <div>{errors.first_name}</div>}
                                 type="text"
                                 className="bg-zinc-100 text-sm rounded mb-3 w-full outline-0 h-10 pl-3"
                                 placeholder="first_name"
